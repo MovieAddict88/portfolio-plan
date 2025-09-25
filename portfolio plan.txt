@@ -1,0 +1,96 @@
+Professional Teacher Portfolio with Auto Installer
+
+**Objective:**  
+Build a **Professional Teacher Portfolio Website** with:  
+- Animated **Portfolio Frontend**  
+- **Admin Panel** (auto-setup installer, login, password reset/change)  
+- Secure **Password-Protected Download Center** with expiration  
+
+---
+
+## 🔹 Step 1: Auto Installer  
+- Create `/install` route/page.  
+- Collect DB host, user, password, name.  
+- Automatically create required tables:  
+  - `users` (id, username, password_hash, first_login flag)  
+  - `about_me` (id, name, bio, education, philosophy)  
+  - `skills` (id, skill_name, level)  
+  - `experience` (id, title, institution, year, description)  
+  - `projects` (id, title, description, media_url)  
+  - `documents` (id, file_name, file_path, uploaded_at)  
+  - `passwords` (id, code, document_id, expiration_date, is_active)  
+- Insert default **admin account** → username: `admin`, password: `admin123`.  
+- Force redirect to login page after success.  
+- Delete or disable `/install` after setup for security.  
+
+---
+
+## 🔹 Step 2: Admin Authentication  
+- Create `/admin/login` page with username + password form.  
+- Use sessions or JWT tokens for secure login.  
+- On first login (flag `first_login=1`), force **change password**.  
+- Settings page → change password anytime.  
+- Logout functionality included.  
+
+---
+
+## 🔹 Step 3: Portfolio Website (Frontend)  
+- Built with **React + TailwindCSS**.  
+- Sections included:  
+  1. **Home** – animated intro with name, tagline, photo.  
+  2. **About Me** – background, teaching philosophy, education.  
+  3. **Experience Timeline** – animated chronological education & teaching history.  
+  4. **Skills Section** – animated bars/icons for teaching skills.  
+  5. **Projects** – showcase classroom activities, lesson plans, optional carousel.  
+  6. **Download Center** – list of available documents.  
+     - Requires entering password before download.  
+     - Backend validates password + expiration.  
+     - Grant access only if valid.  
+  7. **Contact** – form with email + social links.  
+
+---
+
+## 🔹 Step 4: Admin Panel Features  
+- **Dashboard**:  
+  - Upload/Edit/Delete portfolio content (About Me, Skills, Experience, Projects).  
+  - Upload and manage downloadable documents.  
+  - Generate **passwords** for downloads with expiration dates.  
+  - Toggle passwords as active/inactive.  
+- **Password Management**:  
+  - Validate visitor password input.  
+  - Block expired/invalid codes.  
+  - Allow valid downloads.  
+- **User Management**:  
+  - Change admin username/password.  
+
+---
+
+## 🔹 Step 5: Database Schema  
+1. **users** → (id, username, password_hash, first_login, created_at)  
+2. **about_me** → (id, name, bio, education, philosophy)  
+3. **skills** → (id, skill_name, level)  
+4. **experience** → (id, title, institution, year, description)  
+5. **projects** → (id, title, description, media_url)  
+6. **documents** → (id, file_name, file_path, uploaded_at)  
+7. **passwords** → (id, code, document_id, expiration_date, is_active)  
+
+---
+
+## 🔹 Step 6: Secure Download System  
+- Visitor enters password before accessing a document.  
+- Backend verifies against DB.  
+- If valid + not expired → allow download.  
+- If invalid/expired → show error message.  
+
+---
+
+## 🔹 Step 7: Deployment  
+- Upload files to hosting server.  
+- Visit `/install` to set up DB.  
+- Auto-create tables + default admin.  
+- Redirect to `/admin/login`.  
+- After setup, delete `/install` for security.  
+- Ready to use portfolio + admin panel system.  
+
+
+To be deploy at infinityfree
