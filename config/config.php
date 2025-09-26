@@ -1,4 +1,6 @@
 <?php
-// This is a placeholder file to prevent errors during submission.
-// The installer will overwrite this file with the correct database credentials.
+define('DB_HOST', 'sql103.infinityfree.com');
+define('DB_USER', 'if0_39179312');
+define('DB_PASS', 'lxb5bkSPHL');
+define('DB_NAME', 'if0_39179312_portfolio');
 ?>
