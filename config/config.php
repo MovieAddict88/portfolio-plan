@@ -1,6 +1,6 @@
 <?php
-define('DB_HOST', 'sql103.infinityfree.com');
-define('DB_USER', 'if0_39179312');
-define('DB_PASS', 'lxb5bkSPHL');
-define('DB_NAME', 'if0_39179312_portfolio');
+// This is a placeholder file.
+// The portfolio installer will automatically generate the correct
+// config.php file with your database credentials when you run it.
+// Do not commit the generated config.php file to version control.
 ?>
